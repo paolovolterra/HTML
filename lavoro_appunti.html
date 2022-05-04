@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>appunti su imprese</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Ghibbli</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    realizzare un sito
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="sito.html">
+        <span class="fa fa-tasks"></span>
+         
+        istruzioni
+      </a>
+    </li>
+    <li>
+      <a href="Markdown_HowTO.html">Markdown How To</a>
+    </li>
+    <li>
+      <a href="Markdown_books_sites.html">Markdown libri e siti</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-tasks"></span>
+     
+    R
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="R_ETL.html">ETL</a>
+    </li>
+    <li>
+      <a href="R_BI_DataVisualization.html">Data Visualization</a>
+    </li>
+    <li>
+      <a href="R_diagrammi.html">Diagrammi</a>
+    </li>
+    <li>
+      <a href="R_mindmap.html">Mappe concettuali/mentali</a>
+    </li>
+    <li>
+      <a href="R_miscellanea.html">Miscellanea</a>
+    </li>
+    <li>
+      <a href="R_scraping.html">Scraping</a>
+    </li>
+    <li>
+      <a href="R_pdf.html">PDF</a>
+    </li>
+    <li>
+      <a href="R_tables.html">tabelle</a>
+    </li>
+    <li>
+      <a href="RGeo.html">Geografia</a>
+    </li>
+    <li>
+      <a href="R_MachineLearning.html">Machine Learning</a>
+    </li>
+    <li class="dropdown-header">Business Intelligence</li>
+    <li class="divider"></li>
+    <li>
+      <a href="R_BI_quantili.html">Quantili</a>
+    </li>
+    <li>
+      <a href="R_BI_cluster.html">Cluster Analysis</a>
+    </li>
+    <li>
+      <a href="R_BI_PCA.html">PCA</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="Python.html">
+    <span class="fa fa-tasks"></span>
+     
+    Python
+  </a>
+</li>
+<li>
+  <a href="MySql.html">
+    <span class="fa fa-tasks"></span>
+     
+    Mysql
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-briefcase"></span>
+     
+    lavoro
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="lavoro_appunti.html">appunti</a>
+    </li>
+    <li class="dropdown-header">ANALISI</li>
+    <li class="divider"></li>
+    <li>
+      <a href="Superbonus.html">Superbonus</a>
+    </li>
+    <li>
+      <a href="PNRR.html">PNRR</a>
+    </li>
+    <li>
+      <a href="Sottocapitalizzazione.html">Sottocapitalizzazione</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    miscellanea
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="appunti.html">appunti</a>
+    </li>
+    <li>
+      <a href="links.html">pagine utili</a>
+    </li>
+    <li>
+      <a href="DAX_PowerQuery_PowerBI.html">DAX_PowerQuery_PowerBI</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://example.com">
+    <span class="fa fa-question fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">appunti su imprese</h1>
+
+</div>
+
+
+<style type="text/css">
+.column {display::flex;}
+h1 {color: red;}
+h2 {color: green;}
+</style>
+<table>
+<colgroup>
+<col width="1%" />
+<col width="6%" />
+<col width="86%" />
+<col width="1%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>car</th>
+<th>soggetto_concedente</th>
+<th>TITOLO_MISURA</th>
+<th align="right">tot</th>
+<th align="right">TOT ESL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>18903</td>
+<td>INVITALIA S.P.A.</td>
+<td>Bravo Innovation Hub Agrifood</td>
+<td align="right">9</td>
+<td align="right">181.500 €</td>
+</tr>
+<tr class="even">
+<td>16630</td>
+<td>INVITALIA S.P.A.</td>
+<td>Contratti di sviluppo di cui all’articolo 43 del decreto-legge 25 giugno 2008, n.112, convertito dalla legge 6 agosto 2008, n. 133</td>
+<td align="right">2</td>
+<td align="right">17.140.841 €</td>
+</tr>
+<tr class="odd">
+<td>2085</td>
+<td>INVITALIA S.P.A.</td>
+<td>Fondo rotativo nazionale selfiemployment</td>
+<td align="right">7</td>
+<td align="right">39.333 €</td>
+</tr>
+<tr class="even">
+<td>534</td>
+<td>INVITALIA S.P.A.</td>
+<td>Nuove Imprese a Tasso Zero - Agevolazioni di cui al capo 0I del titolo I del D.lgs. 185/2000 volte a sostenere nuova imprenditorialità, in tutto il territorio nazionale, attraverso la creazione di micro e piccole imprese competitive</td>
+<td align="right">1</td>
+<td align="right">23.421 €</td>
+</tr>
+<tr class="odd">
+<td>15870</td>
+<td>INVITALIA S.P.A.</td>
+<td>Rafforzamento patrimoniale delle imprese di medie dimensioni</td>
+<td align="right">6</td>
+<td align="right">10.650.000 €</td>
+</tr>
+<tr class="even">
+<td>1805</td>
+<td>INVITALIA S.P.A.</td>
+<td>regime di aiuto per sostenere la filiera culturale e creativa e rafforzare la competitività delle micro, piccole e medie imprese, finalizzato allo sviluppo ed al consolidamento del settore produttivo collegato al patrimonio culturale italiano – Asse Prior</td>
+<td align="right">118</td>
+<td align="right">3.094.854 €</td>
+</tr>
+<tr class="odd">
+<td>16619</td>
+<td>INVITALIA S.P.A.</td>
+<td>Smart Money - Incentivi per le nuove start up innovative</td>
+<td align="right">77</td>
+<td align="right">749.598 €</td>
+</tr>
+<tr class="even">
+<td>16633</td>
+<td>INVITALIA S.P.A.</td>
+<td>Smart&amp;Start - Riordino degli interventi di sostegno alla nascita e allo sviluppo di start-up innovative in tutto il territorio nazionale - Versione modificata dal Codice CE SA.55753</td>
+<td align="right">5</td>
+<td align="right">569.639 €</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td align="right">225</td>
+<td align="right">32.449.186 €</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col width="1%" />
+<col width="25%" />
+<col width="68%" />
+<col width="1%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>car</th>
+<th>soggetto_concedente</th>
+<th>TITOLO_MISURA</th>
+<th align="right">tot</th>
+<th align="right">TOT ESL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>16628</td>
+<td>MISE- DIREZIONE GENERALE PER GLI INCENTIVI ALLE IMPRESE</td>
+<td>Bando Macchinari Innovativi - Intervento Fabbrica intelligente</td>
+<td align="right">14</td>
+<td align="right">2.916.632 €</td>
+</tr>
+<tr class="even">
+<td>16344</td>
+<td>MISE- DIREZIONE GENERALE PER GLI INCENTIVI ALLE IMPRESE</td>
+<td>Digital Transformation - Sostegno alla trasformazione tecnologica e digitale dei processi produttivi delle PMI attraverso l’implementazione delle tecnologie abilitanti individuate nel Piano nazionale Impresa 4.0 e delle soluzioni tecnologiche di filiera</td>
+<td align="right">17</td>
+<td align="right">251.514 €</td>
+</tr>
+<tr class="odd">
+<td>16172</td>
+<td>MISE- DIREZIONE GENERALE PER GLI INCENTIVI ALLE IMPRESE</td>
+<td>FCS - Accordi 24/05/2017 - Modifica SA.42139</td>
+<td align="right">10</td>
+<td align="right">1.585.270 €</td>
+</tr>
+<tr class="even">
+<td>16781</td>
+<td>MISE- DIREZIONE GENERALE PER GLI INCENTIVI ALLE IMPRESE</td>
+<td>FCS - Accordi SNSI e Calcolo ad alte prestazioni</td>
+<td align="right">1</td>
+<td align="right">493.901 €</td>
+</tr>
+<tr class="odd">
+<td>16624</td>
+<td>MISE- DIREZIONE GENERALE PER GLI INCENTIVI ALLE IMPRESE</td>
+<td>FCS Grandi Progetti “industria sostenibile” - Intervento del Fondo per la crescita sostenibile in favore di grandi progetti di ricerca e sviluppo nell’ambito di specifiche tematiche rilevanti per l’«industria sostenibile»</td>
+<td align="right">1</td>
+<td align="right">829.195 €</td>
+</tr>
+<tr class="even">
+<td>11186</td>
+<td>MISE- DIREZIONE GENERALE PER GLI INCENTIVI ALLE IMPRESE</td>
+<td>IPCEI Microelettronica</td>
+<td align="right">1</td>
+<td align="right">325.198.300 €</td>
+</tr>
+<tr class="odd">
+<td>203</td>
+<td>MISE- DIREZIONE GENERALE PER GLI INCENTIVI ALLE IMPRESE</td>
+<td>Nuova Sabatini - Finanziamenti per l’acquisto di nuovi macchinari, impianti e attrezzature da parte delle piccole e medie imprese - Versione modificata da Codice CE SA.47180</td>
+<td align="right">991</td>
+<td align="right">22.583.138 €</td>
+</tr>
+<tr class="even">
+<td>10966</td>
+<td>MISE- DIREZIONE GENERALE PER GLI INCENTIVI ALLE IMPRESE</td>
+<td>Voucher per consulenza in innovazione</td>
+<td align="right">3</td>
+<td align="right">80.000 €</td>
+</tr>
+<tr class="odd">
+<td>16916</td>
+<td>MISE- DIREZIONE GENERALE PER LA POLITICA INDUSTRIALE, L’INNOVAZIONE E LE PICCOLE E MEDIE IMPRESE</td>
+<td>Incentivi fiscali per investimenti in start up e PMI innovative</td>
+<td align="right">164</td>
+<td align="right">1.793.287 €</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td align="right">1202</td>
+<td align="right">355.731.237 €</td>
+</tr>
+</tbody>
+</table>
+<div id="simest" class="section level1">
+<h1>SIMEST</h1>
+<p>1806 FINANZIAMENTI AGEVOLATI PER L’INSERIMENTO SUI MERCATI ESTERI</p>
+<p>1834 MISURE CONCERNENTI LA PARTECIPAZIONE DI IMPRESE ITALIANE A SOCIETÀ MISTE ALL’ESTERO - CONTRIBUTO IN CONTO INTERESSI</p>
+<p>1835 FINANZIAMENTI AGEVOLATI PER STUDI DI PREFATTIBILITÀ E FATTIBILITÀ. PROGRAMMI DI ASSISTENZA TECNICA</p>
+<p>1836 FINANZIAMENTI AGEVOLATI PER LA PATRIMONIALIZZAZIONE DELLE PMI ESPORTATRICI</p>
+<p>1837 FINANZIAMENTI AGEVOLATI A FAVORE DELLE PMI PER LA REALIZZAZIONE DI INIZIATIVE PROMOZIONALI PER LA PARTECIPAZIONE A FIERE/MOSTRE</p>
+<p>8552 PROGRAMMI PER LO SVILUPPO DEL COMMERCIO ELETTRONICO IN PAESI EXTRA-UE</p>
+<p>15900 TEMPORARY FRAMEWORK</p>
+<p>17437 RISTORO DEI COSTI FISSI NON COPERTI DA UTILI PER IL SISTEMA FIERISTICO</p>
+</div>
+<div id="invitalia" class="section level1">
+<h1>INVITALIA</h1>
+<p>16619 SMART MONEY - INCENTIVI PER LE NUOVE START UP INNOVATIVE</p>
+<p>16633 SMART&amp;START - RIORDINO DEGLI INTERVENTI DI SOSTEGNO ALLA NASCITA E ALLO SVILUPPO DI START-UP INNOVATIVE IN TUTTO IL TERRITORIO NAZIONALE - VERSIONE MODIFICATA DAL CODICE CE SA.55753</p>
+<p>1805 REGIME DI AIUTO PER SOSTENERE LA FILIERA CULTURALE E CREATIVA E RAFFORZARE LA COMPETITIVITÀ DELLE MICRO, PICCOLE E MEDIE IMPRESE, FINALIZZATO ALLO SVILUPPO ED AL CONSOLIDAMENTO DEL SETTORE PRODUTTIVO COLLEGATO AL PATRIMONIO CULTURALE ITALIANO – ASSE PRIOR</p>
+<p>16916 INCENTIVI FISCALI PER INVESTIMENTI IN START UP E PMI INNOVATIVE</p>
+</div>
+<div id="mise" class="section level1">
+<h1>MISE</h1>
+<p>2221 MISE- DIREZIONE GENERALE PER GLI INCENTIVI ALLE IMPRESE REGIONE LOAN FOR SMES CONTRIBUTO PER L’ABBATTIMENTO DEGLI INTERESSI SU LINEA DI CREDITO BEI</p>
+<p>203 MISE- DIREZIONE GENERALE PER GLI INCENTIVI ALLE IMPRESE NUOVA SABATINI - FINANZIAMENTI PER L’ACQUISTO DI NUOVI MACCHINARI, IMPIANTI E ATTREZZATURE DA PARTE DELLE PICCOLE E MEDIE IMPRESE - VERSIONE MODIFICATA DA CODICE CE SA.47180</p>
+<p>3656 INIZIATIVA PMI (SME INITIATIVE) ITALIA</p>
+<p>15870 RAFFORZAMENTO PATRIMONIALE DELLE IMPRESE DI MEDIE DIMENSIONI</p>
+<p>16628 Bando Macchinari Innovativi - Intervento Fabbrica intelligente</p>
+</div>
+<div id="temporary-table" class="section level1">
+<h1>TEMPORARY TABLE</h1>
+<p>CREATE TEMPORARY TABLE IF NOT EXISTS TABLE1 AS (SELECT distinct(CF) CF from pmi_pratiche_abs where intermediario =‘Canale diretto’ AND data_creazione &gt; ‘2020-12-31’);</p>
+</div>
+<div id="hash-in-mysql" class="section level1">
+<h1>HASH in Mysql</h1>
+</div>
+<div id="startup-innovative-7.448-bilanci-2020-al-18102021" class="section level1">
+<h1>STARTUP INNOVATIVE 7.448 BILANCI 2020 AL 18/10/2021</h1>
+<table>
+<tbody>
+<tr class="odd">
+<td>1Q</td>
+<td>4.127</td>
+<td>0 - 70K€</td>
+</tr>
+<tr class="even">
+<td>2Q</td>
+<td>1.907</td>
+<td>44- 232K€</td>
+</tr>
+<tr class="odd">
+<td>3Q</td>
+<td>1.092</td>
+<td>233-278k€</td>
+</tr>
+<tr class="even">
+<td>4Q</td>
+<td>322</td>
+<td>980-23.680k€</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="pmi-innovative" class="section level1">
+<h1>PMI INNOVATIVE</h1>
+<table>
+<tbody>
+<tr class="odd">
+<td>1Q</td>
+<td>105</td>
+<td>0-43K€</td>
+</tr>
+<tr class="even">
+<td>2Q</td>
+<td>206</td>
+<td>45-232K€</td>
+</tr>
+<tr class="odd">
+<td>3Q</td>
+<td>431</td>
+<td>232-978K€</td>
+</tr>
+<tr class="even">
+<td>4Q</td>
+<td>779</td>
+<td>978-108.635K€</td>
+</tr>
+</tbody>
+</table>
+<p><img src="D:/DIR/immagini/2021100601.PNG" /></p>
+</div>
+<div id="section" class="section level1">
+<h1>2021/10/11</h1>
+<div class="figure">
+<img src="https://edicoladigitale.milanofinanza.it/class/books/italiaogsette/2021/20211011italiaogsette/images/pages/Page-18.jpg" alt="" />
+<p class="caption">AIM</p>
+</div>
+<p><img src="d:/dir/r/2021100613.png" /></p>
+</div>
+<div id="monitor-dei-distretti-industriali-2021h1" class="section level1">
+<h1><a href="https://group.intesasanpaolo.com/it/sala-stampa/comunicati-stampa/2021/10/monitor-dei-distretti-industriali-1--semestre-2021-">MONITOR DEI DISTRETTI INDUSTRIALI 2021H1</a></h1>
+<p><a href="https://group.intesasanpaolo.com/content/dam/portalgroup/repository-documenti/newsroom/comunicati-stampa-it/2021/10/CS_Monitor_Distretti_Italia_settembre_2021.pdf" class="uri">https://group.intesasanpaolo.com/content/dam/portalgroup/repository-documenti/newsroom/comunicati-stampa-it/2021/10/CS_Monitor_Distretti_Italia_settembre_2021.pdf</a></p>
+<ul>
+<li><p>L’export balza al +27,6% rispetto allo stesso periodo del 2020</p></li>
+<li><p>Il recupero è diffuso a tutti i territori; tra i settori più dinamici, gli Elettrodomestici, la Metallurgia e l’Agro-alimentare</p></li>
+<li><p>Segnali di recupero per il Sistema moda con un rimbalzo rispetto al 2020, ma è ancora in forte ritardo rispetto al 2019</p></li>
+<li><p>L’anno si prevede chiudersi con nuovi livelli record</p></li>
+<li><p>Germania, Cina, Stati Uniti e Irlanda sono i mercati in cui l’export ha registrato la crescita maggiore in valore</p></li>
+<li><p>Rincari delle commodity e interruzioni delle forniture i punti di attenzione</p></li>
+<li><p>Il confronto con il 2019 evidenzia un progresso dello 0,7% (pari a 474 milioni di euro) e il raggiungimento di nuovi livelli record a quota 64,6 miliardi di euro.</p></li>
+<li><p>Il recupero è diffuso a tutti i territori: su un totale di 158 distretti monitorati, 101 nel secondo trimestre sono oltre i livelli del 2019.</p></li>
+</ul>
+<p>Tra i settori distrettuali più dinamici, gli Elettrodomestici (+29% la variazione rispetto ai primi sei mesi del 2019), la Metallurgia (+22,2%, spinta anche dall’aumento dei prezzi alla produzione) e l’Agro-alimentare (+14,9%).</p>
+<p>Molto positiva anche la performance della filiera delle costruzioni e del sistema casa, con in testa i distretti specializzati in Mobili (+8,2%) e Prodotti e materiali da costruzione (+6,7%), che hanno battuto la concorrenza tedesca (+6,3% e -0,8%).</p>
+<p>Sempre nel confronto con i primi sei mesi del 2019, ha chiuso in lieve aumento l’export di Altri prodotti intermedi (+4,5%) e Prodotti in metallo (+2,1%), mentre la Meccanica ha registrato un calo lieve (-1,6%) e comunque inferiore ai competitor tedeschi (-3%).</p>
+<p>Segnali di recupero emergono anche per il Sistema moda che mostra un rimbalzo rispetto al 2020 (soprattutto per i beni di consumo, in progresso del +38,4%), ma è ancora in forte ritardo rispetto al 2019 nel comparto degli intermedi (-29,3%).</p>
+<p>A livello territoriale spicca l’accelerazione delle esportazioni distrettuali del Nord-Est (+4,2% la variazione rispetto al primo semestre 2019), dove si sono messi in evidenza il Friuli-Venezia Giulia per dinamica (+15,6%) e l’Emilia-Romagna e il Veneto per aumento dei valori esportati (+443,7 milioni di euro e +324,9 milioni rispettivamente).</p>
+<p>Germania (bene soprattutto Agro-alimentare ed Elettrodomestici), Cina (in evidenza Beni di consumo della moda, Meccanica e Agro-alimentare), Stati Uniti (trainanti Agro-alimentare e Mobili) e Irlanda (spinta dall’apertura di un’unità logistica a Dublino da parte del principale operatore del distretto orafo di Valenza) sono i mercati in cui l’export dei distretti ha registrato la crescita maggiore in valore.</p>
+<p>Nei prossimi mesi l’export distrettuale è atteso mantenere un buon ritmo di crescita sui mercati esteri, grazie alla presenza di condizioni di domanda internazionale favorevoli. Il 2021 si chiuderà con nuovi livelli record. A livello settoriale, solo il Sistema moda avrà bisogno di più tempo per tornare sui livelli pre-pandemici.</p>
+<p>In questo contesto, rincari delle commodity e interruzioni delle forniture rappresenteranno due punti di attenzione, che potrebbero frenare lo slancio della domanda mondiale. Tuttavia, nel medio termine la possibile e connessa revisione delle catene globali del valore a favore della riallocazione su base continentale delle filiere, potrebbe giocare a favore anche dei produttori italiani distrettuali.</p>
+</div>
+<div id="section-1" class="section level1">
+<h1>2021-10-28</h1>
+<div class="figure">
+<img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211028italiaoggi/images/pages/Page-17.jpg" alt="" />
+<p class="caption">PNRR</p>
+</div>
+</div>
+<div id="section-2" class="section level1">
+<h1>2021-10-07</h1>
+<p><img src="https://edicoladigitale.milanofinanza.it/class/books/mf/2021/20211007mf/images/pages/Page-8.jpg" /> # 2021-10-05</p>
+<p><img src="https://edicoladigitale.milanofinanza.it/class/books/mf/2021/20211006mf/images/pages/Page-10.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/mf/2021/20211006mf/images/pages/Page-15.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/mf/2021/20211006mf/images/pages/Page-40.jpg" /></p>
+</div>
+<div id="section-3" class="section level1">
+<h1>2021-10-04</h1>
+<div id="dott.-gallina-emette-minibond-green-da-14-mln-euro.-lo-sottoscrive-unicredit-che-arriva-così-a-quota-100-minibond-in-portafoglio-per-690-mln-euro" class="section level2">
+<h2><a href="https://bebeez.it/greenbeez/dott-gallina-emette-minibond-green-da-14-mln-euro-lo-sottoscrive-unicredit-che-arriva-cosi-a-quota-100-minibond-in-portafoglio-per-690-mln-euro/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=dott-gallina-emette-minibond-green-da-14-mln-euro-lo-sottoscrive-unicredit-che-arriva-cosi-a-quota-100-minibond-in-portafoglio-per-690-mln-euro">Dott. Gallina emette minibond green da 14 mln euro. Lo sottoscrive Unicredit, che arriva così a quota 100 minibond in portafoglio per 690 mln euro</a></h2>
+<p><img src="https://bebeez.it/wp-content/uploads/2021/10/Unicredit-minibond.jpg" /> <a href="https://www.unicreditgroup.eu/it/press-media/press-releases/2021/unicredit-si-conferma-leader-di-mercato-nei-minibond--raggiunta-.html?intcid=INT-IG_CTA0021" class="uri">https://www.unicreditgroup.eu/it/press-media/press-releases/2021/unicredit-si-conferma-leader-di-mercato-nei-minibond--raggiunta-.html?intcid=INT-IG_CTA0021</a></p>
+<p><img src="D:/DIR/immagini/2021100501.PNG" /></p>
+<p><img src="https://edicoladigitale.milanofinanza.it/class/books/mf/2021/20211005mf/images/pages/Page-9.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/mf/2021/20211005mf/images/pages/Page-40.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211005italiaoggi/images/pages/Page-26.jpg" /></p>
+</div>
+</div>
+<div id="anfia-produzione-industriale-automotive--229-nel-2020" class="section level1">
+<h1><a href="https://www.industriaitaliana.it/automotive-anfia-produzione-industriale/"><strong>Anfia: produzione industriale automotive -22,9% nel 2020</strong></a></h1>
+<p>Produzione industriale e automobilistica in netto calo nel 2020 ma con un secondo semestre in recupero: questi dati, insieme a molti altri, nel rapporto ‘L’industria autoveicolistica italiana nel 2020’ pubblicato da Anfia. L’annus horribilis dell’industria e della società appare in tutta la sua durezza nello studio, che quantifica per esempio una produzione industriale dell’automotive italiano in calo del 22,9% rispetto al 2019. La tendenza al ribasso era iniziata nel 2018 (- 3,3%) e proseguita nel 2019, anno che si era chiuso con un – 9,5% ma il risultato del 2020 segna una discontinuità netta, oltretutto maggiore rispetto all’industria nel suo complesso (escluse le costruzioni), la cui produzione ha segnato un – 11,4%. È da notare che ordinativi e fatturato del settore erano in calo già dal 2018.</p>
+<div id="una-crisi-strisciante-esplosa-nel-2020" class="section level2">
+<h2>Una crisi strisciante esplosa nel 2020</h2>
+<p>In effetti la produzione domestica di autoveicoli è cresciuta dal 2014 al 2017, passando da 698mila unità a 1,14 milioni. La tendenza si è invertita nel 2018, che ha registrato un – 7% scendendo a 1,06 milioni di autoveicoli, e il calo si è confermato nel 2019, anno chiuso a 915mila unità con un calo del 14%. Il 2020 è stato influenzato dalla pandemia da Covid-19: durante il lockdown la produzione si è quasi completamente arrestata e poi c’è stato un recupero nei mesi successivi, che ha fatto chiudere l’anno a 777mila unità con un crollo del 15,1% rispetto al 2019. Le immatricolazioni, dopo il picco negativo del 2013 (1,42 milioni di autoveicoli), si sono riprese nel 2014 rimanendo positive fino alla seconda metà del 2018, anno che chiude a 2,12 milioni di unità con una flessione del 3,2% rispetto al 2017. Il 2019 conferma sostanzialmente i numeri del 2018 a 2,13 milioni mentre il 2020 evidenzia un calo del 26,6% rispetto all’anno precedente con 1,565 milioni di immatricolazioni.</p>
+</div>
+<div id="impatto-differenziato-della-pandemia" class="section level2">
+<h2>Impatto differenziato della pandemia</h2>
+<p>Le autovetture crollano del 28% anno su anno, un risultato dato da un primo semestre a -46% e dal secondo a – 4% rispetto allo stesso periodo del 2019. I veicoli commerciali leggeri sotto i 35 quintali di peso totale a terra hanno perso di meno, arretrando del 15,1% rispetto al 2019 ma registrando un 2° semestre a + 6,8%. I veicoli ad alimentazione alternativa aumentano fino all’8,6% mentre il 62% dei veicoli elettrici appartiene ai segmenti “furgonette/minicargo” e “furgoni piccoli”. I veicoli commerciali con ptt sopra i 35 quintali immatricolati sono stati più di 20mila, che corrisponde a un calo del 14,3% composto da un 1° semestre a -35% e un 2° semestre positivo per il 16%. il lockdown ha impattato pesantemente sul mercato degli autobus sceso del 28,6% a 3.143 unità con entrambi i semestri negativi. Anfia ricorda inoltre come il parco circolante sia ancora molto anziano – l’età mediana delle autovetture è di 11,83 anni, valore che vale a 10,33 per quelle a gasolio e sale a 14,75 anni per quelle a benzina – e quindi abbastanza inquinante. Le vetture Euro 6 sono il 26%, percentuale che sale al 36% per i trattori stradali ma crolla al 19% per gli autocarri di trasporto merci. Il 51% degli autobus, infine, è ante Euro 4 e solo il 21% è euro 6.</p>
+<p><img src="https://www.industriaitaliana.it/wp-content/uploads/2021/10/Produzione-ordinativi-e-fatturato-automotive-italiano.jpg" /> <img src="https://www.industriaitaliana.it/wp-content/uploads/2021/10/Lanzianita%CC%80-del-parco-circolante-italiano.jpg" /></p>
+<p style="page-break-after: always;">
+ 
+</p>
+</div>
+</div>
+<div id="fintech-nel-primo-semestre-investimenti-globali-a-quota-98-mld-di-cui-523-mld-dai-venture" class="section level1">
+<h1><a href="https://bebeez.it/fintech/fintech-nel-primo-semestre-investimenti-globali-a-quota-98-mld-di-cui-523-mld-dai-venture-lo-calcola-kpmg/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=fintech-nel-primo-semestre-investimenti-globali-a-quota-98-mld-di-cui-523-mld-dai-venture-lo-calcola-kpmg"><strong>Fintech, nel primo semestre investimenti globali a quota 98 mld $, di cui 52,3 mld dai venture</strong></a></h1>
+<p>Il mercato degli investimenti globali nel settore fintech ha raggiunto i 98 miliardi di dollari nel primo semestre 2021 con 2.456 operazioni tra m&amp;a, private equity e venture capital. Una cifra importante, considerando che nell’intero 2020 erano stati investiti 121,5 miliardi. Lo calcola Kpmg nel suo ultimo Report Pulse of Fintech(si veda qui il comunicato stampa e qui l’intero studio)</p>
+<p>In particolare, gli investimenti di venture capital hanno toccato il record dei 52,3 miliardi di dollari nei primi sei mesi del 2021, più che raddoppiando i 22,5 miliardi registrati nel secondo semestre del 2020 e quasi raggiungendo il record annuale di 54 miliardi segnato nel 2018. Di questo totale, ben 21 miliardi di dollari sono stati investimenti condotti da corporate venture capital.</p>
+<p>Tra i round più importanti ci sono quello da 3,4 miliardi della wealthtech statunitense Robinhood, quello da 1,5 miliardi della brasiliana Nubank e i due round della banca svedese Klarna specialista nei pagamenti rateali per un totale di 1,9 miliardi. Fonte: Kpmg – Pulse of Fintech H1 2021</p>
+<p>Il tutto ha portato a far crescere in maniera importante le valutazioni delle startup e delle scaleup, con la valutazione mediana pre-money delle scaleup later stage che ha raggiunto quota 325 milioni di dollari dai 125 milioni del 2020. Come conseguenza è aumentato anche il numero degli unicorni: sono 163 le aziende che hanno raggiunto questo status nel primo semestre 2021.</p>
+<p>I fondi di private equity a loro volta hanno investito in fintech 5 miliardi di dollari nel primo semestre 2021, superando il record toccato a 4,7 miliardi in tutto il 2018. I deal più importanti sono stati il buyout da 800 milioni di dollari di InvestCloud condotto da Motive Partners e Clearlake Capital, l’investimento da 800 milioni di dollari di Silverlake in Group 42 con sede ad Abu Dhabi e il buyout da 600 milioni di dollari dell’irlandese Fenergo condotto da Astorg e Bridgepoint.</p>
+<p>Quanto all’m&amp;a, Kpmg ha mappato 353 deal per un valore complessivo di 40,7 miliardi, ben più della metà del totale di 74,1 miliardi e 502 deal di tutto il 2020. Di questo totale, ben 27,7 miliardi sono stati rappresentati da deal cross-border, che invece in tutto il 2020 avevano soltanto raggiunto la cifra di 10,3 miliardi. Nel calcolo ci sono per esempio il merger tra London Stock Exchange Group e Refinitiv (14,8 miliardi) e l’acquisizione da parte del Nasdaq della piattaforma canadese di rilevamento delle frodi Verafin (2,7 miliardi).</p>
+<p>Sul fronte geografico, gli investimenti complessivi tra m&amp;a, venture capital e private equity hanno raggiunto i 42,1 miliardi di dollari negli Usa, di cui 25 miliardi di venture capital, ben oltre i 20 miliardi di tutto il 2020. Anche nell’area Europa, Middle East e Africa i numeri sono in crescita: oltre 39 miliardi di dollari raccolti nel primo semestre del 2021, contro i 26 miliardi dell’intero anno scorso. Una spinta decisiva anche in questo caso arriva dal venture capital: sono stati investiti 15 miliardi di dollari nel semestre, mentre in tutto il 2020 ne erano stati investiti solo 9. Il Regno Unito resta il principale hub di investimenti con 24,5 miliardi, seguito da Scandinavia (4,8 miliardi) e Germania (2,5 miliardi). Anche in EMEA le valutazioni pre-money mediane delle scaleup in later stage sono salite in maniera importante a 51,5 milioni dai 31,5 milioni del 2020.</p>
+<p>Nel secondo semestre del 2021 gli investimenti globali nel fintech dovrebbero rimanere sostenuti. Kpmg prevede che l’area dei pagamenti digitali rimarrà il motore dominante degli investimenti fintech, mentre le soluzioni di finanziamento basate sui ricavi, i modelli banking-as-a-service e i servizi B2B attireranno livelli crescenti di investimenti. Dato l’aumento delle transazioni digitali e il conseguente aumento di attacchi informatici e ransomware, anche le soluzioni di sicurezza informatica ricopriranno un ruolo importante.</p>
+<p><a href="https://connect.kpmg.it/pulse-of-fintech-h1-21?__hstc=214917896.d4c60ebc88beecbc9909f6b6578cdd7b.1632766316294.1632766316294.1632766316294.1&amp;__hssc=214917896.1.1632766316294&amp;__hsfp=1246457293"><strong>documento di KPMG</strong></a></p>
+</div>
+<div id="rating-di-impresa---early-warnings" class="section level1">
+<h1>RATING DI IMPRESA - EARLY WARNINGS</h1>
+<p><img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210909italiaoggi/images/pages/Page-31.jpg" /></p>
+</div>
+<div id="pnrr" class="section level1">
+<h1>PNRR</h1>
+<p><img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210930italiaoggi/images/pages/Page-19.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210930italiaoggi/images/pages/Page-20.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210930italiaoggi/images/pages/Page-21.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210930italiaoggi/images/pages/Page-22.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210930italiaoggi/images/pages/Page-23.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210930italiaoggi/images/pages/Page-24.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210930italiaoggi/images/pages/Page-25.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210930italiaoggi/images/pages/Page-26.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210930italiaoggi/images/pages/Page-27.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210930italiaoggi/images/pages/Page-28.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210930italiaoggi/images/pages/Page-29.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210930italiaoggi/images/pages/Page-30.jpg" /></p>
+<p><img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210923italiaoggi/images/pages/Page-19.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210923italiaoggi/images/pages/Page-20.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210923italiaoggi/images/pages/Page-21.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210923italiaoggi/images/pages/Page-22.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210923italiaoggi/images/pages/Page-23.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210923italiaoggi/images/pages/Page-24.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210923italiaoggi/images/pages/Page-25.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210923italiaoggi/images/pages/Page-26.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210923italiaoggi/images/pages/Page-27.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210923italiaoggi/images/pages/Page-28.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210923italiaoggi/images/pages/Page-29.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210923italiaoggi/images/pages/Page-30.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210916italiaoggi/images/pages/Page-19.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210916italiaoggi/images/pages/Page-20.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210916italiaoggi/images/pages/Page-21.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210916italiaoggi/images/pages/Page-22.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210916italiaoggi/images/pages/Page-23.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210916italiaoggi/images/pages/Page-24.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210916italiaoggi/images/pages/Page-25.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210916italiaoggi/images/pages/Page-26.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210916italiaoggi/images/pages/Page-27.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210916italiaoggi/images/pages/Page-28.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210916italiaoggi/images/pages/Page-29.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20210916italiaoggi/images/pages/Page-30.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211007italiaoggi/images/pages/Page-17.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211007italiaoggi/images/pages/Page-18.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211007italiaoggi/images/pages/Page-19.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211007italiaoggi/images/pages/Page-20.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211007italiaoggi/images/pages/Page-21.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211007italiaoggi/images/pages/Page-22.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211007italiaoggi/images/pages/Page-23.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211007italiaoggi/images/pages/Page-24.jpg" /></p>
+<p><img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211014italiaoggi/images/pages/Page-19.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211014italiaoggi/images/pages/Page-20.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211014italiaoggi/images/pages/Page-21.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211014italiaoggi/images/pages/Page-22.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211014italiaoggi/images/pages/Page-23.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211014italiaoggi/images/pages/Page-24.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211014italiaoggi/images/pages/Page-25.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211014italiaoggi/images/pages/Page-26.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211014italiaoggi/images/pages/Page-27.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211014italiaoggi/images/pages/Page-28.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211014italiaoggi/images/pages/Page-29.jpg" /> <img src="https://edicoladigitale.milanofinanza.it/class/books/italiaoggi/2021/20211014italiaoggi/images/pages/Page-30.jpg" /></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
